@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react';
 // import background from '../images/blankpage.jpeg'
 import axios from 'axios'
+import { api } from "../utilities";
+import { useNavigate } from 'react-router-dom';
 export default function MakeRecipePage() {
-   
+
+    // const { recipeBook } = props
+
+    const navigate = useNavigate()
+
     const [recipeData, setRecipeData] = useState({
+        recipe_book_id: '',
         title: '',
         ingredients: '',
         instructions: '',
         time: '',
         category: '',
-        recipeBookId: ''
     });
 
     const [recipeBooks, setRecipeBooks] = useState([])
@@ -33,6 +39,25 @@ export default function MakeRecipePage() {
         getRecipeBookData();
     }, []);
 
+
+    const handleSubmit = async (e) => {  // send recipe data to database
+        e.preventDefault()
+        try {
+            const token = localStorage.getItem("token")
+            if (token) {
+                api.defaults.headers.common["Authorization"] = `Token ${token}`;
+                const response = await api.post("recipe/create/", {
+                    recipeData
+                });
+                navigate(`/recipe/${recipeData.recipe_book_id}/${response.data.id}`)
+            }
+            alert("Recipe Created!")
+        } catch (error) {
+            console.error("New Recipe Error: ", error);
+            alert("Something went wrong")
+        }
+      };
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setRecipeData((prevData) => ({
@@ -45,14 +70,9 @@ export default function MakeRecipePage() {
         const selectedRecipeBookId = event.target.value;
         setRecipeData((prevData) => ({
             ...prevData,
-            recipeBookId: selectedRecipeBookId
+            recipe_book_id: selectedRecipeBookId
         }));
     };
-
-    const handleSubmit = () => {
-        // send recipe data to database
-        console.log(recipeData)
-    }
 
     return (
 
@@ -74,7 +94,7 @@ export default function MakeRecipePage() {
                             id="title"
                             placeholder="Exp: Strawberry Smoothie"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-green-400 focus:shadow-md"
-                            value={recipeData.title}
+                            value={recipeBooks.title}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -142,7 +162,7 @@ export default function MakeRecipePage() {
                         name="recipeBookId"
                         id="recipeBookId"
                         class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-green-400 focus:shadow-md"
-                        value={recipeData.recipeBookId}
+                        value={recipeData.recipe_book_id}
                         onChange={handleRecipeBookSelect}>
                         <option value=''>Select a Recipe Book</option>
                         {recipeBooks.map((recipeBook) => (
@@ -155,7 +175,7 @@ export default function MakeRecipePage() {
                     <div className='pl-16 pt-4 space-x-10'>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none">Back</button>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" 
-                        // onClick={handleSubmit}
+                        onClick={handleSubmit}
                         >Submit</button>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none">Clear</button>
                     </div>

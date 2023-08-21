@@ -61,20 +61,25 @@ class A_Recipe(APIView):
 
     # User can create their own recipe - search for recipe book
     def post(self, request):
-        recipe_book_id = request.data.get("recipe_book_id")
+        print(request.data or "something")
+        recipe_book_id = int(request.data.get("recipeData").get("recipe_book_id"))
+        print("line 1")
         if not recipe_book_id:
+            print("line 2")
             return Response(
                 {"error": "recipe_book_id is required in the request data"},
                 status=HTTP_400_BAD_REQUEST,
             )
         try:
+            print("line 3")
             recipe_book = Recipe_book.objects.get(pk=recipe_book_id)
         except Recipe_book.DoesNotExist:
+            print("line 4")
             return Response(
                 {"error": f"RecipeBook with ID {recipe_book_id} not found"},
                 status=HTTP_404_NOT_FOUND,
             )
-        a_recipe = Recipe(recipe_book=recipe_book, **request.data)
+        a_recipe = Recipe(recipe_book=recipe_book, **request.data.get("recipeData"))
         a_recipe.save()
         serializer = RecipeSerializer(a_recipe)
         return Response(serializer.data, status=HTTP_201_CREATED)
