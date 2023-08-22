@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 export default function FindRecipePage() {
     
     const [searchInput, setSearchInput] = useState("")
@@ -28,7 +29,7 @@ export default function FindRecipePage() {
                 q: `${searchInput}`
               },
               headers: {
-                'X-RapidAPI-Key': '94eebc2103msh8574514499c08e7p1575b3jsn3418be20ddbd',
+                'X-RapidAPI-Key': import.meta.env.VITE_SOME_KEY,
                 'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
               }
             };
