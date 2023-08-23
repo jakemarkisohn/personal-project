@@ -3,7 +3,7 @@ import { api } from "../utilities"
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 
-// import background from '../images/book.jpg'
+import background from '../images/book.jpg'
 
 export default function AllRecipeBookPage() {
     
@@ -68,15 +68,15 @@ export default function AllRecipeBookPage() {
     };
 
     return (
-        <div>
-        {/* <div className = "image"
+       
+        <div className = "image"
         style = {{
             height: "100vh",
             width: "100vw",
-            // backgroundImage:`url(${background})`,
-            // backgroundSize: "cover",
-            // backgroundAttachment: "fixed"
-        }}> */}
+            backgroundImage:`url(${background})`,
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed"
+        }}>
         <div className="pt-10 text-2xl"> 
                <h2 className="flex justify-center pb-5"> New Recipe Book </h2>
                <div className="flex justify-center">

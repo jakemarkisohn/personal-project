@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { userContext } from "../App";
 import { useNavigate } from 'react-router-dom';
 
-// import pictureOne from '../images/pancakes.jpg'
-// import pictureTwo from '../images/pizza.jpg'
-// import pictureThree from '../images/bread.jpg'
-// import background from '../images/background.jpg'
+import pictureOne from '../images/pancakes.jpg'
+import pictureTwo from '../images/pizza.jpg'
+import pictureThree from '../images/fish.jpg'
+import background from '../images/background.jpg'
 
 export const HomePage = () => {
   const { user } = useContext(userContext);
@@ -28,22 +28,22 @@ export const HomePage = () => {
   return (
  
     <div className = "image"
-        // style = {{
-        //     height: "100vh",
-        //     width: "100vw",
-        //     backgroundImage:`url(${background})`,
-        //     backgroundSize: "cover",
-        //     backgroundAttachment: "fixed"
-        // }}
+        style = {{
+            height: "100vh",
+            width: "100vw",
+            backgroundImage:`url(${background})`,
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed"
+        }}
         >
 
   <div className ="flex justify-center mb-20 pt-20">
     <div className="space-x-20 sm:flex sm:justify-center max-w-screen-lg max-h-screen-lg">
   <div
     className="flex flex-col rounded-lg dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-      {/* <img
+      <img
         className="object-scale-down h-78 w-96 rounded-lg"
-        src={pictureOne}/> */}
+        src={pictureTwo}/>
     <div className="p-6">
       <h5
         className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
@@ -64,9 +64,9 @@ export const HomePage = () => {
   </div>
   <div
     className="flex flex-col rounded-lg dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-      {/* <img
+      <img
         className="object-scale-down h-78 w-96 rounded-lg"
-        src={pictureTwo} /> */}
+        src={pictureOne} />
     <div className="p-6">
       <h5
         className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
@@ -87,9 +87,9 @@ export const HomePage = () => {
   </div>
   <div
     className="flex flex-col rounded-lg dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
-      {/* <img
+      <img
         className="object-scale-down h-78 w-96 rounded-lg"
-        src={pictureThree}/> */}
+        src={pictureThree}/>
     <div className="p-6">
       <h5
         className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
