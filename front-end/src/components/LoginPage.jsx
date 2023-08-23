@@ -26,8 +26,7 @@ export const LoginPage = () => {
           navigate("/home");
       } catch (error) {
           console.error("Login Error:", error);
-          // Handle the login error here
-          alert("Incorrect Credentials"); // You can also show a more user-friendly error message
+          alert("Incorrect Credentials");
       }
   };
   
@@ -35,15 +34,6 @@ export const LoginPage = () => {
     return (
       
       <div className="relative">
-        {/* <div className = "image"
-        style = {{
-            height: "100vh",
-            width: "100vw",
-            backgroundImage:`url(${background})`,
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed"
-        }}
-        ></div> */}
       <video src={videoBg} autoPlay loop muted className="absolute inset-0 w-full h-full object-cover z-0" />
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 relative z-10">
       <div>

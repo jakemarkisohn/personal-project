@@ -57,7 +57,7 @@ export default function MakeRecipePage() {
             alert("Recipe Created!")
         } catch (error) {
             console.error("New Recipe Error: ", error);
-            alert("Something went wrong")
+            alert("Please enter a valid input.")
         }
       };
 
@@ -84,27 +84,29 @@ export default function MakeRecipePage() {
 
    const clearData = () => {
     setRecipeData({
-        recipe_book_id: '',
         title: '',
         ingredients: '',
         instructions: '',
         time: '',
         category: '',
+        recipe_book_id: '',
     });
   };
+
+//   Need to make useState for each field 
 
     return (
 
     <div className = "image"
         style = {{height: "100%",width: "100%",backgroundImage:`url(${background})`,backgroundSize: "cover",}}
         >
-        <div class="flex justify-center mb-2 text-4xl"> 
+        <div class="flex justify-center mb-2 text-4xl font-semibold text-slate-100"> 
             <div class="mx-auto w-full max-w-[550px]">
                 <div className="p-8 ml-14">
                     <h1>Create My Own Recipe</h1>   
                 </div>
                     <div class="mb-5">
-                        <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                        <label for="name" class="mb-3 block font-semibold text-xl text-slate-100">
                             Title
                         </label>
                         <input 
@@ -118,7 +120,7 @@ export default function MakeRecipePage() {
                         />
                     </div>
                     <div class="mb-5">
-                        <label for="message"class="mb-3 block text-base font-medium text-[#07074D]">
+                        <label for="message"class="mb-3 block font-semibold text-xl text-slate-100">
                             Ingredients
                         </label>
                         <textarea
@@ -132,7 +134,7 @@ export default function MakeRecipePage() {
                         ></textarea>
                     </div>
                     <div class="mb-5">
-                        <label for="message" class="mb-3 block text-base font-medium text-[#07074D]">
+                        <label for="message" class="mb-3 block font-semibold text-xl text-slate-100">
                             Instructions
                         </label>
                         <textarea
@@ -146,7 +148,7 @@ export default function MakeRecipePage() {
                         ></textarea>
                     </div>
                     <div class="mb-5">
-                        <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                        <label for="name" class="mb-3 block font-semibold text-xl text-slate-100">
                             Time
                         </label>
                         <input
@@ -160,7 +162,7 @@ export default function MakeRecipePage() {
                         />
                     </div>
                     <div class="mb-5">
-                        <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                        <label for="name" class="mb-3 block font-semibold text-xl text-slate-100">
                             Category
                         </label>
                         <input
@@ -174,7 +176,7 @@ export default function MakeRecipePage() {
                         />
                     </div>
                     <div className='mb-5'>
-                        <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                        <label for="name" class="mb-3 block font-semibold text-xl text-slate-100">
                             Select Recipe Book
                         </label>
                         <select
@@ -191,11 +193,11 @@ export default function MakeRecipePage() {
                         ))}
                         </select>
                     </div>
-                    <div className='pl-16 pt-4 space-x-10'>
-                        <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" onClick={navigateToRecipeBooks}>Back</button>
+                    <div className='pl-12 pt-4 space-x-10'>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" 
                         onClick={handleSubmit}
                         >Submit</button>
+                        <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" onClick={navigateToRecipeBooks}>Recipe Books</button>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none"
                         onClick={clearData}
                         >Clear</button>

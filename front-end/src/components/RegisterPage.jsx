@@ -14,12 +14,12 @@ export const RegisterPage = () => {
 
   const signUp = async (e) => {
     e.preventDefault();
-    console.log("Request Payload:", {
-      first_name: firstName,
-      last_name: lastName,
-      email: userName,
-      password: password,
-    });
+    // console.log("Request Payload:", {
+    //   first_name: firstName,
+    //   last_name: lastName,
+    //   email: userName,
+    //   password: password,
+    // });
 
     try {
       const response = await api.post("users/register/", {
@@ -42,16 +42,6 @@ export const RegisterPage = () => {
   };
 
   return (
-    // <div className = "image"
-    //     style = {{
-    //         height: "100vh",
-    //         width: "100vw",
-    //         backgroundImage:`url(${background})`,
-    //         backgroundSize: "cover",
-    //         zIndexL: -10
-    //         // backgroundAttachment: "fixed"
-    //     }}
-    //     >
     <div className="relative">
     <video src={videoBg} autoPlay loop muted className="absolute inset-0 w-full h-full object-cover z-0" />
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 relative z-10">
