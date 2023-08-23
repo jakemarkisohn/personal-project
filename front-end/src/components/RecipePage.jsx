@@ -2,7 +2,7 @@ import axios from "axios"
 import { api } from "../utilities"
 import { useState, useEffect } from 'react'
 import { useParams, useLocation, useNavigate } from 'react-router-dom'
-// import background from '../images/book.jpg'
+import background from '../images/book.jpg'
 
 
 export default function RecipePage() {
@@ -82,9 +82,9 @@ export default function RecipePage() {
         style = {{
             height: "100vh",
             width: "100vw",
-            // backgroundImage:`url(${background})`,
-            // backgroundSize: "cover",
-            // backgroundAttachment: "fixed"
+            backgroundImage:`url(${background})`,
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed"
         }}>
             
             <h1 className="flex justify-center text-6xl pt-40 text font-semibold ">Recipes</h1>

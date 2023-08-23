@@ -2,7 +2,7 @@ import axios from "axios"
 import { api } from "../utilities"
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-// import background from '../images/blankpage.jpeg'
+import background from '../images/blankpage.jpg'
 
 
 export default function SingleRecipePage() {     
@@ -59,9 +59,9 @@ export default function SingleRecipePage() {
         style = {{
             height: "100vh",
             width: "100vw",
-            // backgroundImage:`url(${background})`,
-            // backgroundSize: "cover",
-            // backgroundAttachment: "fixed"
+            backgroundImage:`url(${background})`,
+            backgroundSize: "cover",
+            backgroundAttachment: "fixed"
         }}>
 
             {recipe && (

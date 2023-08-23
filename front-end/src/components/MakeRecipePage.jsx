@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'
 import { api } from "../utilities";
 import { useNavigate } from 'react-router-dom';
+import background from '../images/background.jpg'
+
+
 export default function MakeRecipePage() {
 
     // const { recipeBook } = props
@@ -81,19 +84,19 @@ export default function MakeRecipePage() {
 
    const clearData = () => {
     setRecipeData({
+        recipe_book_id: '',
         title: '',
         ingredients: '',
         instructions: '',
         time: '',
         category: '',
-        recipe_book_id: ''
     });
   };
 
     return (
 
     <div className = "image"
-        // style = {{height: "100%",width: "100%",backgroundImage:`url(${background})`,backgroundSize: "cover",}}
+        style = {{height: "100%",width: "100%",backgroundImage:`url(${background})`,backgroundSize: "cover",}}
         >
         <div class="flex justify-center mb-2 text-4xl"> 
             <div class="mx-auto w-full max-w-[550px]">
