@@ -74,6 +74,22 @@ export default function MakeRecipePage() {
         }));
     };
 
+
+    const navigateToRecipeBooks = () => {
+        navigate(`/recipe_books`)
+   }
+
+   const clearData = () => {
+    setRecipeData({
+        title: '',
+        ingredients: '',
+        instructions: '',
+        time: '',
+        category: '',
+        recipe_book_id: ''
+    });
+  };
+
     return (
 
     <div className = "image"
@@ -173,11 +189,13 @@ export default function MakeRecipePage() {
                         </select>
                     </div>
                     <div className='pl-16 pt-4 space-x-10'>
-                        <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none">Back</button>
+                        <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" onClick={navigateToRecipeBooks}>Back</button>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" 
                         onClick={handleSubmit}
                         >Submit</button>
-                        <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none">Clear</button>
+                        <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none"
+                        onClick={clearData}
+                        >Clear</button>
                     </div>
                 </div>
             </div>

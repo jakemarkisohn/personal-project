@@ -46,6 +46,25 @@ export default function RecipePage() {
         getRecipeData(); // get all recipe info here to turn into an object - that way you can pass the Django recipe data and the other api data through the same object model so that they are formated the same 
     }, [id]);
 
+    const deleteBook = async (e) => { // delete a recipe book
+        e.preventDefault()
+        try {
+            const token = localStorage.getItem("token")
+            if (token) {
+                axios.defaults.headers.common["Authorization"] = `Token ${token}`;
+                const response = await api.delete(`recipe_book/${id}`);
+                console.log(response.data)
+                navigate("/recipe_books/")
+            }
+            alert("Recipe Book Deleted!")
+            window.location.reload();
+        }   catch (error) {
+            console.error("Error Deleting RecipeBook: ", error);
+            alert("Something went wrong")
+        }
+        
+    }
+
     const navigateToRecipeBooks = () => {
         navigate(`/recipe_books`)
    }
@@ -72,12 +91,15 @@ export default function RecipePage() {
             {recipes.map((recipe) => (
                 <div className="flex justify-center mt-20 mb-2 text-4xl" key={recipe.id}>
                     <button type="button" onClick={() => navigateToRecipeList(recipe.id)}>{recipe.title}</button>
-                    
+                    {/* <div>
+                        <button type="button" className="border border-solid border-blue-600 px-4 h-8 rounded-md text-xl"> Delete </button>
+                    </div> */}
                 </div>
             ))}
             <div className="flex justify-center pt-10 space-x-4">
                 <button type="button" className="flex flex-center px-4 py-2 bg-green-800 text-white rounded hover:bg-purple-600" onClick={navigateToRecipeBooks}>Back</button>
                 <button type="button" className="flex flex-center px-4 py-2 bg-green-800 text-white rounded hover:bg-purple-600" onClick={navigateToAddRecipe}>Add a Recipe</button>
+                <button type="button" onClick={deleteBook}  className="flex flex-center px-4 py-2 bg-green-800 text-white rounded hover:bg-purple-600"> Delete Book</button>
             </div>
         </div>
     )
