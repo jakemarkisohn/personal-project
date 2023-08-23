@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import { userContext } from "../App";
 import { api } from "../utilities";
 import { useNavigate } from "react-router-dom";
-import background from '../images/background.jpg'
-// import videoBg from '../video/background-video.mp4'
+import videoBg from '../video/background-video.mp4'
 
 export const RegisterPage = () => {
   const [firstName, setFirstName] = useState("");
@@ -43,18 +42,18 @@ export const RegisterPage = () => {
   };
 
   return (
-    <div className = "image"
-        style = {{
-            height: "100vh",
-            width: "100vw",
-            backgroundImage:`url(${background})`,
-            backgroundSize: "cover",
-            zIndexL: -10
-            // backgroundAttachment: "fixed"
-        }}
-        >
-    {/* // <div className="relative"> */}
-      {/* <video src={videoBg} autoPlay loop muted className="absolute inset-0 w-full h-full object-cover z-0" /> */}
+    // <div className = "image"
+    //     style = {{
+    //         height: "100vh",
+    //         width: "100vw",
+    //         backgroundImage:`url(${background})`,
+    //         backgroundSize: "cover",
+    //         zIndexL: -10
+    //         // backgroundAttachment: "fixed"
+    //     }}
+    //     >
+    <div className="relative">
+    <video src={videoBg} autoPlay loop muted className="absolute inset-0 w-full h-full object-cover z-0" />
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 relative z-10">
       <div>
         <h1 className="font-serif text-8xl mt-10 mb-10 text-red-900">Recipe Radar</h1>

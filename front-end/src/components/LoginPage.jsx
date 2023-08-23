@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import { userContext } from "../App";
 import { useNavigate, Link } from "react-router-dom";
 import { api } from "../utilities";
-import background from '../images/background.jpg'
-// import videoBg from '../video/background-video.mp4'
+
+import videoBg from '../video/background-video.mp4'
 
 export const LoginPage = () => {
     const [userName, setUserName] = useState("");
@@ -31,24 +31,23 @@ export const LoginPage = () => {
       }
   };
   
-  {/* <video src={videoBg} autoPlay loop muted className="absolute inset-0 w-full h-full object-cover z-0" /> */}
 
     return (
       
-     
-        <div className = "image"
+      <div className="relative">
+        {/* <div className = "image"
         style = {{
             height: "100vh",
             width: "100vw",
             backgroundImage:`url(${background})`,
             backgroundSize: "cover",
-            zIndexL: -10
-            // backgroundAttachment: "fixed"
+            backgroundAttachment: "fixed"
         }}
-        >
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        ></div> */}
+      <video src={videoBg} autoPlay loop muted className="absolute inset-0 w-full h-full object-cover z-0" />
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 relative z-10">
       <div>
-        <h1 className="font-serif text-8xl mt-10 mb-10 text-red-900">Recipe Radar</h1>
+        <h1 className="font-serif text-8xl mt-10 mb-10 text-red-800">Recipe Radar</h1>
       </div>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -83,5 +82,5 @@ export const LoginPage = () => {
     </div>
     </div>
     </div>
-    </div>
+    </div> 
 )};
