@@ -48,29 +48,30 @@ export default function FindRecipeVideoPage() {
     
     return (
 
-        <div>
+        <div className='bg-gradient-to-r from-green-600 to-lime-400 bg-cover min-h-screen'>
 
             <div className='flex justify-center pt-20 '>
               <div>
-                <div className='flex justify-center text-2xl'>
+                <div className='flex justify-center text-3xl pb-4'>
                   <h1>Search For Videos Here</h1>
                 </div>
                 <input
                   type="text"
                   name="title"
-                  className="w-96 h-8 border border-solid border-blue-800 p-2 rounded-md" 
+                  className="w-96 h-8 border border-solid border-blue-800 py-1.5 px-4 rounded-md" 
                   placeholder='Search by name or ingredient'
                   onChange={handleChange}/>
-                  <button type="button" className="border border-solid border-blue-600 px-4 h-8 rounded-md" onClick={searchRecipeVideo}>Search</button>
+                  <button type="button" className="bg-purple-600 hover:bg-blue-700 text-white font-bold py-1.5 px-4 rounded-md" onClick={searchRecipeVideo}>Search</button>
           </div>
            
           </div>
 
-            <ul className="grid justify-center mt-20 mb-2 ml-20 text-xl">
-              <div className="p-10 gap-20 flex flex-wrap">
+            <div className=''>
+            <ul className="grid justify-center mt-20 mb-2 ml-10 mr-10 text-xl ">
+              <div className="p-6 gap-20 flex flex-wrap ">
                {recipeVideoData.map((meal, index) => (
-                <div className='flex flex-col'>
-                <div
+                <div className='flex flex-col border-2 w-96 p-2'>
+                <div className='font-semibold flex justify-center pt-4'
                 key={index}>{meal.name}
                 </div>
                 <a href={meal.original_video_url} target="_blank">
@@ -81,12 +82,12 @@ export default function FindRecipeVideoPage() {
                 </a>
                 <br/>
                 <br/>
-                
+
                 </div>
                ))}
                </div>
             </ul>
-
+          </div>
         </div>
         
     )

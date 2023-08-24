@@ -21,6 +21,15 @@ export default function MakeRecipePage() {
         category: '',
     });
 
+    // const [recipe_book_id, setRecipeBookId] = useState('')
+    // const [title, setTitle] = useState('')
+    // const [ingredients, setIngredients] = useState('')
+    // const [instructions, setInstructions] = useState('')
+    // const [time, setTime] = useState('')
+    // const [category, setCategory] = useState('')
+
+
+
     const [recipeBooks, setRecipeBooks] = useState([])
 
     useEffect(() => {
@@ -83,14 +92,16 @@ export default function MakeRecipePage() {
    }
 
    const clearData = () => {
-    setRecipeData({
-        title: '',
-        ingredients: '',
-        instructions: '',
-        time: '',
-        category: '',
-        recipe_book_id: '',
-    });
+    setRecipeData('')
+    // setRecipeData({
+        // title: '',
+        // ingredients: '',
+        // instructions: '',
+        // time: '',
+        // category: '',
+        // recipe_book_id: '',
+    setRecipeData('')
+        // });
   };
 
 //   Need to make useState for each field 
@@ -193,7 +204,7 @@ export default function MakeRecipePage() {
                         ))}
                         </select>
                     </div>
-                    <div className='pl-12 pt-4 space-x-10'>
+                    <div className='pl-12 pt-4 pb-6 space-x-10'>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" 
                         onClick={handleSubmit}
                         >Submit</button>

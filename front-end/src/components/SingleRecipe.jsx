@@ -70,27 +70,27 @@ export default function SingleRecipePage() {
                 <div className="flex justify-center mt-10 mb-2 text-4xl"> 
                     <dl className="list-disc font-medium text-white-500">
                         {/* <dt className="p-4">{recipe.title}</dt> */}
-                        <dl>-Ingredients:
+                        <dl>Ingredients:
                         <dl className="list-inside p-4">
                             {recipe.ingredients.split(',').map((ingredient, index) => (
-                                <dd key={index}>{index + 1}.{ingredient.trim()}</dd>
+                                <dd key={index}>- {ingredient.trim()}</dd>
                             ))}
                         </dl>
                         </dl>
-                        <dl>-Instructions:
+                        <dl>Instructions:
                         <dl className="list-inside p-4">
-                            {recipe.instructions.split(',').map((instruction, index) => (
-                                <dd key={index}>{index + 1}.{instruction.trim()}</dd>
+                            {recipe.instructions.split('.').map((instruction, index) => (
+                                <dd key={index}>{index + 1}. {instruction.trim()}</dd>
                             ))}
                         </dl>
                         </dl>
-                        <dt className="p-2">-Time: {recipe.time}</dt>
-                        <dt>-Category: {recipe.category}</dt>
+                        <dt className="p-2">Time: {recipe.time}</dt>
+                        <dt className="p-2">Category: {recipe.category}</dt>
                     </dl>
                 </div>
                 </div>
             )}
-                <div className="flex justify-center pt-20 space-x-10">
+                <div className="flex justify-center pt-8 space-x-8">
                     <button type="button" className="flex flex-center px-4 py-2 bg-green-800 text-white rounded hover:bg-purple-600" onClick={navigateToRecipeList}>Back to Recipe Book</button>
                     <button type="button" 
                     onClick={deleteRecipe}

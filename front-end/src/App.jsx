@@ -3,10 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 import { createContext } from "react";
 import { api } from "./utilities";
-import Navbar from './components/Navbar';
-// import HomePage from './components/HomePage'
-// import Navbar from './components/Navbar'
-// import { RegisterPage } from './components/RegisterPage'
 
 export const userContext = createContext()
 
