@@ -90,20 +90,11 @@ export default function SingleRecipePage() {
                 </div>
                 </div>
             )}
-                <div className="flex justify-center pt-20 space">
+                <div className="flex justify-center pt-20 space-x-10">
                     <button type="button" className="flex flex-center px-4 py-2 bg-green-800 text-white rounded hover:bg-purple-600" onClick={navigateToRecipeList}>Back to Recipe Book</button>
                     <button type="button" 
                     onClick={deleteRecipe}
                     className="flex flex-center px-4 py-2 bg-green-800 text-white rounded hover:bg-purple-600"> Delete Recipe</button>
-                    {/* <button type="button" 
-                    onClick={() => {
-                        if(window.confirm('Delete this item?')) {
-                            console.log('Delete confirmed')
-                            deleteRecipe()
-                    };
-                }}
-                    className="flex flex-center px-4 py-2 bg-green-800 text-white rounded hover:bg-purple-600"> Delete Recipe</button> */}
-
                 </div>
         </div>
     )

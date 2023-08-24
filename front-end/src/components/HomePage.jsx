@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import pictureOne from '../images/pancakes.jpg'
 import pictureTwo from '../images/pizza.jpg'
 import pictureThree from '../images/fish.jpg'
+import pictureFour from '../images/bowl.jpg'
 import background from '../images/background.jpg'
 
 export const HomePage = () => {
@@ -17,6 +18,10 @@ export const HomePage = () => {
 
   const navigateToFindRecipe = () => {
     navigate('/recipes')
+  }
+
+  const navigateToFindRecipeVideos = () => {
+    navigate('/recipe_videos')
   }
   
   const navigateToCreateRecipe = () => {
@@ -38,7 +43,7 @@ export const HomePage = () => {
         >
 
   <div className ="flex justify-center mb-20 pt-20">
-    <div className="space-x-20 sm:flex sm:justify-center max-w-screen-lg max-h-screen-lg">
+    <div className="space-x-10 sm:flex sm:justify-center max-w-screen-lg max-h-screen-lg">
   <div
     className="flex flex-col rounded-lg dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
       <img
@@ -62,6 +67,32 @@ export const HomePage = () => {
       </button>
     </div>
   </div>
+
+
+  <div
+    className="flex flex-col rounded-lg dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
+      <img
+        className="object-scale-down h-78 w-96 rounded-lg"
+        src={pictureFour} />
+    <div className="p-6">
+      <h5
+        className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+        Recipe Videos
+      </h5>
+      <p className="mb-10 text-base text-neutral-600 dark:text-neutral-200">
+      Are recipe videos your jam? You're in luck
+      </p>
+      <button
+          type="button"
+          onClick={navigateToFindRecipeVideos}
+          data-te-ripple-init
+          data-te-ripple-color="light"
+          class="inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out bg-slate-400 hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700">
+          Watch Recipe Videos
+      </button>
+    </div>
+  </div>
+
   <div
     className="flex flex-col rounded-lg dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
       <img
@@ -72,7 +103,7 @@ export const HomePage = () => {
         className="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
         Recipe Books
       </h5>
-      <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+      <p className="mb-10 text-base text-neutral-600 dark:text-neutral-200">
         Browse through your recipe books here
       </p>
       <button
@@ -85,6 +116,8 @@ export const HomePage = () => {
       </button>
     </div>
   </div>
+
+
   <div
     className="flex flex-col rounded-lg dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
       <img
@@ -96,7 +129,7 @@ export const HomePage = () => {
         Create My Own Recipe
       </h5>
       <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-        Already have a recipe you love to make? Add it to a recipe book!
+        Already have a recipe you love to make?
       </p>
       <button
           type="button"

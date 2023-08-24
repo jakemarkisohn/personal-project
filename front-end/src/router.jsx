@@ -8,6 +8,7 @@ import MakeRecipePage from "./components/MakeRecipePage";
 import App from "./App";
 import RecipePage from "./components/RecipePage";
 import SingleRecipePage from "./components/SingleRecipe";
+import FindRecipeVideoPage from "./components/VideoRecipeSearch";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: "recipes",
                 element: <FindRecipePage />
+            },
+            {
+                path: "recipe_videos",
+                element: <FindRecipeVideoPage />
             },
             {
                 path: "recipe/create/",
