@@ -9,7 +9,6 @@ export const userContext = createContext()
 function App() {
     const [user, setUser] = useState(null)
     const navigate = useNavigate()
-    // const [recipeBooks, setRecipeBooks] = useState([])
 
     useEffect(() => {
         console.log(user);
@@ -43,25 +42,6 @@ function App() {
         console.error("Error:", error)
     }};
 
-
-    // useEffect(() => {
-    //     async function getRecipeBookData() {
-    //         try {
-    //             const token = localStorage.getItem("token");
-    //             if (token) {
-    //                 const headers = { Authorization: `Token ${token}` };
-    //                 const response = await axios.get("http://127.0.0.1:8000/api/recipe_book/", { headers });
-    //                 console.log("API Response:", response);
-    //                 setRecipeBooks(response.data);
-    //             } else {
-    //                 console.log("No auth token found in local storage.");
-    //             }
-    //         } catch (error) {
-    //             console.log("Error fetching data:", error);
-    //         }
-    //     }
-    //     getRecipeBookData();
-    // }, []);
 
     return (
         <div>

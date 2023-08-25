@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import background from '../images/blankpage.jpeg'
+import { userContext } from "../App";
 import axios from 'axios'
 import { api } from "../utilities";
 import { useNavigate } from 'react-router-dom';
@@ -7,8 +7,6 @@ import background from '../images/background.jpg'
 
 
 export default function MakeRecipePage() {
-
-    // const { recipeBook } = props
 
     const navigate = useNavigate()
 
@@ -20,15 +18,6 @@ export default function MakeRecipePage() {
         time: '',
         category: '',
     });
-
-    // const [recipe_book_id, setRecipeBookId] = useState('')
-    // const [title, setTitle] = useState('')
-    // const [ingredients, setIngredients] = useState('')
-    // const [instructions, setInstructions] = useState('')
-    // const [time, setTime] = useState('')
-    // const [category, setCategory] = useState('')
-
-
 
     const [recipeBooks, setRecipeBooks] = useState([])
 
@@ -92,19 +81,17 @@ export default function MakeRecipePage() {
    }
 
    const clearData = () => {
-    setRecipeData('')
-    // setRecipeData({
-        // title: '',
-        // ingredients: '',
-        // instructions: '',
-        // time: '',
-        // category: '',
-        // recipe_book_id: '',
-    setRecipeData('')
-        // });
+
+    setRecipeData({
+        title: '',
+        ingredients: '',
+        instructions: '',
+        time: '',
+        category: '',
+        recipe_book_id: '',
+        });
   };
 
-//   Need to make useState for each field 
 
     return (
 
@@ -126,7 +113,7 @@ export default function MakeRecipePage() {
                             id="title"
                             placeholder="Exp: Strawberry Smoothie"
                             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-green-400 focus:shadow-md"
-                            value={recipeBooks.title}
+                            value={recipeData.title}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -204,7 +191,7 @@ export default function MakeRecipePage() {
                         ))}
                         </select>
                     </div>
-                    <div className='pl-12 pt-4 pb-6 space-x-10'>
+                    <div className='pl-9 pt-4 pb-6 space-x-10'>
                         <button class="hover:bg-yellow-800 rounded-md bg bg-green-800 py-3 px-8 pt-2 text-base font-semibold text-white outline-none" 
                         onClick={handleSubmit}
                         >Submit</button>

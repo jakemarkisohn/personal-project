@@ -144,9 +144,9 @@ export const HomePage = () => {
 </div>
 </div>
 
-      <div>
+      {/* <div>
       <p>About Recipe Radar</p>
-      </div>
+      </div> */}
 </div>
 
   );

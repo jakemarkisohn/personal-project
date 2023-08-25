@@ -44,7 +44,7 @@ export default function AllRecipeBookPage() {
                 navigate("/recipe_books/")
             }
             alert("Recipe Book Created!")
-            window.location.reload();
+            setRecipeBook([...recipe_book, newRecipeBook])
 
         } catch (error) {
             console.error("New Recipe Book Error: ", error);
@@ -78,13 +78,14 @@ export default function AllRecipeBookPage() {
             backgroundAttachment: "fixed"
         }}>
         <div className="pt-10 text-2xl"> 
-               <h2 className="flex justify-center pb-5"> New Recipe Book </h2>
+               {/* <h2 className="flex justify-center pb-5"> New Recipe Book </h2> */}
                <div className="flex justify-center">
                     <input type="text"
                     name="title"
+                    placeholder="New Recipe Book"
                     className="w-96 h-8 border border-solid border-blue-800 p-2 rounded-md" 
                     onChange={handleInputChange}/> 
-                    <button type="button" className="border border-solid border-blue-600 px-4 h-8 rounded-md" onClick={handleSubmit}> Create </button>
+                    <button type="button" className="border border-solid border-blue-600 bg-neutral-200  px-4 h-8 rounded-md" onClick={handleSubmit}> Create </button>
                 </div>
             </div>
         

@@ -42,7 +42,7 @@ export default function SingleRecipePage() {
                 navigate("/recipe_books/")
             }
             alert("Recipe Successfully Deleted!")
-            window.location.reload();
+           
         }   catch (error) {
             console.error("Error Deleting RecipeBook: ", error);
             alert("Something went wrong")
@@ -55,15 +55,15 @@ export default function SingleRecipePage() {
    }
 
     return (
-        <div className = "image"
-        style = {{
-            height: "100vh",
-            width: "100vw",
-            backgroundImage:`url(${background})`,
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed"
-        }}>
-
+        // <div className = "image"
+        // style = {{
+        //     height: "100vh",
+        //     width: "100vw",
+        //     backgroundImage:`url(${background})`,
+        //     backgroundSize: "cover",
+        //     backgroundAttachment: "fixed"
+        // }}>
+            <div className="bg-slate-400">
             {recipe && (
                 <div>
             <h1 className="flex justify-center text-6xl pt-20 text font-semibold ">{recipe.title}</h1>
