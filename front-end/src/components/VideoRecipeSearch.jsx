@@ -48,11 +48,11 @@ export default function FindRecipeVideoPage() {
     
     return (
 
-        <div className='bg-gradient-to-r from-green-600 to-lime-400 bg-cover min-h-screen'>
+        <div className='bg-gradient-to-r from-green-700 to-lime-400 bg-cover min-h-screen'>
 
             <div className='flex justify-center pt-20 '>
               <div>
-                <div className='flex justify-center text-3xl pb-4'>
+                <div className='flex justify-center text-3xl pb-4 font-semibold'>
                   <h1>Search For Videos Here</h1>
                 </div>
                 <input
@@ -76,13 +76,10 @@ export default function FindRecipeVideoPage() {
                 </div>
                 <a href={meal.original_video_url} target="_blank">
                 <img 
-                className='oject-contain h-60 w-80 pl-8'
+                className='oject-contain h-60 w-80 pl-8 pb-2'
                 src={meal.thumbnail_url}
                 ></img>
                 </a>
-                <br/>
-                <br/>
-
                 </div>
                ))}
                </div>

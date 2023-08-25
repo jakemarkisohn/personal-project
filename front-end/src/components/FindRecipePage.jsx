@@ -19,7 +19,7 @@ export default function FindRecipePage() {
               const response = await axios.request(options);
               console.log(response.data);
               setRandomRecipeData(response.data.meals)
-              setRecipeDataTwo([])
+              
           } catch (error) {
               console.error(error);
           }
@@ -43,32 +43,11 @@ export default function FindRecipePage() {
             const response = await axios.request(options);
             console.log(response.data);
             setRecipeDataTwo(response.data.results)
-            setRandomRecipeData([])
+            
         } catch (error) {
             console.error(error);
         }
 };
-
-
-// const handleSubmit = async (e) => {  // send recipe data to database
-//   e.preventDefault()
-//   try {
-//       const token = localStorage.getItem("token")
-//       if (token) {
-//           api.defaults.headers.common["Authorization"] = `Token ${token}`;
-//           const response = await api.post("recipe/create/", {
-//               recipeData
-//           });
-//           navigate(`/recipe/${recipeData.recipe_book_id}/${response.data.id}`)
-//       }
-//       alert("Recipe Created!")
-//   } catch (error) {
-//       console.error("New Recipe Error: ", error);
-//       alert("Please enter a valid input.")
-//   }
-// };
-
-
 
       useEffect(() => {
         console.log(recipeDataTwo)
@@ -116,7 +95,7 @@ export default function FindRecipePage() {
                     <div key={i}>{ingredient}</div>
                   ))}  
                   </div>                
-                  <button className='border-2 border-gray-600 m-4 p-2'>Add To Recipe Book</button>
+                  {/* <button className='border-2 border-gray-600 m-4 p-2'>Add To Recipe Book</button> */}
                   <button onClick={() => window.open(meal.strYoutube, "_blank")} className='border-2 border-gray-600 m-4 p-2'>Watch Here</button>
                 </div>
           </div>
@@ -148,7 +127,7 @@ export default function FindRecipePage() {
         <div key={index}>{ingredients.raw_text}</div>
       ))}
      </div>
-    <button className='border-2 border-gray-600 m-4 p-2'>Add To Recipe Book</button>
+    {/* <button className='border-2 border-gray-600 m-4 p-2'>Add To Recipe Book</button> */}
     <button onClick={() => window.open(meal.original_video_url, "_blank")} className='border-2 border-gray-600 m-4 p-2'>Watch Here</button>
     </div>
     </div>
@@ -156,7 +135,7 @@ export default function FindRecipePage() {
         
     return (
 
-        <div className='bg-gradient-to-r from-green-600 to-lime-400 bg-cover min-h-screen'>
+        <div className='bg-gradient-to-r from-emerald-500 to-emerald-800 bg-cover min-h-screen'>
         <div className='flex justify-center pt-20'>
               <div>
                 <div className='flex justify-center text-3xl pb-4'>
@@ -185,11 +164,7 @@ export default function FindRecipePage() {
           </div>          
           <div>{formattedDataTwo}</div>
           <div>{formattedRandomRecipe}</div>
-          {/* <div>{formattedData}</div> */}
         </div>
         
     )
 }
-
-
-  // strYoutube

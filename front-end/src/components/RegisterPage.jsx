@@ -9,8 +9,14 @@ export const RegisterPage = () => {
   const [lastName, setLastName] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const { setUser } = useContext(userContext);
+  const { user, setUser } = useContext(userContext);
   const navigate = useNavigate();
+
+  if(user) {
+    navigate("/home")
+    return 
+   }
+
 
   const signUp = async (e) => {
     e.preventDefault();

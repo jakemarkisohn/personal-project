@@ -8,8 +8,14 @@ import videoBg from '../video/background-video.mp4'
 export const LoginPage = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const { setUser } = useContext(userContext);
+    const { user, setUser } = useContext(userContext);
     const navigate = useNavigate()
+
+   if(user) {
+    navigate("/home")
+    return 
+   }
+
 
     const logIn = async (e) => {
       e.preventDefault();
